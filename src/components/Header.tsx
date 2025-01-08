@@ -16,6 +16,7 @@ import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.png'
 import { link } from 'fs'
 import { GitHubIcon, LinkedInIcon } from './SocialIcons'
+import { useTheme } from 'next-themes'
 
 function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
