@@ -23,6 +23,8 @@ import image4 from '@/images/photos/tinte.png'
 import image5 from '@/images/photos/tinte.png'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
+import { SimpleLayout } from '@/components/SimpleLayout'
+import { Flame, LinkIcon } from 'lucide-react'
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -270,22 +272,85 @@ function Photos() {
   )
 }
 
+const services = [
+
+  {
+    name: 'Web & Mobile App Development',
+    description:
+      'Full-stack development specializing in scalable fintech solutions. MVP development in 5 days using Laravel, React, and AWS. Proven experience with high-transaction systems.',
+    link: { href: 'https://cal.com/misteryomi/15min', label: 'Book a Call' },
+    logo: <Flame />,
+  },
+  {
+    name: 'IT Trainings & Consultations',
+    description:
+      'I help individuals transition into tech and become job ready through comprehensive trainings. My programs cover everything from core programming languages (PHP, JavaScript, Python) to essential tools and frameworks, with a focus on practical, job-ready skills.',
+    link: { href: 'https://cal.com/misteryomi/15min', label: 'Book a 1:1 call' },
+    logo: <Flame />,
+  },
+  {
+    name: 'Global Talent Visa Consultancy',
+    description:
+      'I help with guidance on the Global Talent Visa endorsement preparation process. My services include portfolio development guidance, technical assessment preparation, Career progression planning, documents review and more',
+    link: { href: 'https://www.roadtogtv.com', label: 'Visit roadtogtv.com' },
+    logo: <Flame />,
+  },
+
+]
+
+export function Services() {
+  return (
+
+    <div className='py-10'>
+        <h2 className='text-2xl font-bold'>Services I Render</h2>
+
+      <ul
+        role="list"
+        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 text-clip my-10"
+      >
+        {services.map((project) => (
+          <Card as="li" key={project.name}>
+            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              <span
+                className="h-8 w-8"
+              >
+                {project.logo}
+              </span>
+            </div>
+            <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+              <Card.Link href={project.link.href}>{project.name}</Card.Link>
+            </h2>
+            <Card.Description>{project.description}</Card.Description>
+            <p className="relative z-10 mt-6 flex  text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+              <LinkIcon className="h-6 w-6 flex-none" />
+              <span className="ml-2">{project.link.label}</span>
+            </p>
+          </Card>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+
 export default async function Home() {
   let articles = (await getAllArticles()).slice(0, 4)
 
   return (
     <>
-      <Container className="mt-9">
+      <Container className="mt-20">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Software engineer, Technical Product leader, and casual speaker.
+            Software engineer, Technical Product leader, UK Global Talent and casual speaker.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+          I'm a software engineering leader specializing in high-scale fintech and e-commerce solutions. With 6+ years of experience building systems processing $500K+ monthly transactions and scaling platforms to 5,000+ users. Currently based in the United Kingdom, I combine technical expertise with product leadership to deliver impactful solutions.
+          {/* 
             I’m Yomi, a software engineer, technical product leader and entrepreneur based in the United Kingdom. {' '}
             
             {/* I’m the founder of Learnable, where we help creatives learn, create and share alongside established industry leaders. */}
             {/* <br/><br/> */}
-            I play around with everything PHP & Javascript, specializes in Fintech and E-commerce products, and in my free time, provide mentorship and organize community events, such as the UK Tech Career Summit.
+            {/* I play around with everything PHP & Javascript, specializes in Fintech and E-commerce products, and in my free time, provide mentorship and organize community events, such as the UK Tech Career Summit. */} */}
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink href="https://twitter.com/misteryomi" aria-label="Follow on X" icon={XIcon} />
@@ -306,9 +371,10 @@ export default async function Home() {
             />
           </div>
         </div>
+        <Services />
       </Container>
       {/* <Photos /> */}
-      <Container className="mt-24 md:mt-28">
+      <Container className="mt-24 md:mt-10">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
             {articles.map((article) => (
