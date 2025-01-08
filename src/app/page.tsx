@@ -298,7 +298,7 @@ const services = [
 
 ]
 
-export function Services() {
+function Services() {
   return (
 
     <div className='py-10'>
@@ -344,13 +344,13 @@ export default async function Home() {
             Software engineer, Technical Product leader, UK Global Talent and casual speaker.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          I'm a software engineering leader specializing in high-scale fintech and e-commerce solutions. With 6+ years of experience building systems processing $500K+ monthly transactions and scaling platforms to 5,000+ users. Currently based in the United Kingdom, I combine technical expertise with product leadership to deliver impactful solutions.
+          I am a software engineering leader specializing in high-scale fintech and e-commerce solutions. With 6+ years of experience building systems processing $500K+ monthly transactions and scaling platforms to 5,000+ users. Currently based in the United Kingdom, I combine technical expertise with product leadership to deliver impactful solutions.
           {/* 
             I’m Yomi, a software engineer, technical product leader and entrepreneur based in the United Kingdom. {' '}
             
-            {/* I’m the founder of Learnable, where we help creatives learn, create and share alongside established industry leaders. */}
-            {/* <br/><br/> */}
-            {/* I play around with everything PHP & Javascript, specializes in Fintech and E-commerce products, and in my free time, provide mentorship and organize community events, such as the UK Tech Career Summit. */} */}
+            {/* I’m the founder of Learnable, where we help creatives learn, create and share alongside established industry leaders. 
+            <br/><br/>
+            {/* I play around with everything PHP & Javascript, specializes in Fintech and E-commerce products, and in my free time, provide mentorship and organize community events, such as the UK Tech Career Summit. */} 
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink href="https://twitter.com/misteryomi" aria-label="Follow on X" icon={XIcon} />
