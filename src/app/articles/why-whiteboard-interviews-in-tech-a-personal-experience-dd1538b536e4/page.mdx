@@ -1,0 +1,18 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Yomi Omotoso',
+  date: '2022-06-19',
+  title: 'Why Whiteboard Interviews in Tech? — A Personal Experience',
+  description:
+    "Permit me to say, this is (was) my first technology-related write-up ever, so permit me wherever I goof. It’s part of the building process. So, what prompted this write-up? My recent failure at getting on a good job search experience with.",
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Read full article here: https://medium.com/@misteryomi/why-whiteboard-interviews-in-tech-a-personal-experience-dd1538b536e4

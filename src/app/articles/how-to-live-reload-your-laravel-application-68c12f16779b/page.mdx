@@ -1,0 +1,18 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Yomi Omotoso',
+  date: '2022-06-19',
+  title: 'How to live-reload your Laravel Application.',
+  description:
+    'Little did I know there was a live-reload feature support in Laravel until this moment. My inquiry (just as probably yours) led me to "googling" "live-reload laravel on browser". Alas, I was led to this amazing plugin: "LiveReload" — a Laravel Mix plugin that allows for live-reloading your Laravel application using Webpack.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Read full article here: https://medium.com/@misteryomi/how-to-live-reload-your-laravel-application-68c12f16779b
